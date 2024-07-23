@@ -1,241 +1,57 @@
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: transparent;
-    overflow: hidden;
-}
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-.background {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(135deg, #0a1738 0%, #030e2b 50%, #000000 100%);
-    z-index: 0;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن المطور</title>
+    <link rel="stylesheet" href="styles.css"> <!-- تأكد من وجود هذا الملف مع تنسيق CSS الخاص بك -->
+</head>
+<body>
 
-.stars {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-}
+    <div class="background"></div>
+    <div class="stars"></div>
+    <div class="glass-container">
+        <div class="profile-container">
+            <img src="https://i.ibb.co/W65F1sW/boy.png" alt="صورة شخصية" class="profile-image">
 
-.glass-container {
-    direction: rtl;
-    position: relative;
-    z-index: 1;
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-    backdrop-filter: blur(8px);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    text-align: center;
-    width: 100%;
-    max-width: 800px;
-    overflow: auto;
-    margin: 0 auto;
-    height: auto;
-    max-height: 80vh;
-}
-
-.profile-container {
-    animation: fadeIn 1s ease-in-out;
-}
-
-.profile-image {
-    border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    margin-bottom: 5px;
-    animation: flip 3s ;
-}
-
-h1 {
-    color: #fff;
-    margin-bottom: 20px;
-}
-
-.greeting {
-    color: #ffea00;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 24px; /* يمكنك تعديل حجم الخط حسب الرغبة */
-}
-
-.introduction {
-    color: #fff;
-    font-weight: normal; /* يمكنك تغيير الوزن حسب الرغبة */
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 18px; /* يمكنك تعديل حجم الخط حسب الرغبة */
-}
-
-.purpose {
-    color: #fff;
-    font-weight: normal; /* يمكنك تغيير الوزن حسب الرغبة */
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 18px; /* يمكنك تعديل حجم الخط حسب الرغبة */
-}
-
-.goal {
-    color: #fff;
-    font-weight: normal; /* يمكنك تغيير الوزن حسب الرغبة */
-    text-align: center;
-    margin-bottom: 18px;
-    font-size: 16px; /* يمكنك تعديل حجم الخط حسب الرغبة */
-}
-
-.date {
-    color: #fff;
-    font-weight: normal; /* يمكنك تغيير الوزن حسب الرغبة */
-    text-align: center;
-    margin-bottom: 16px;
-    font-size: 14px; /* يمكنك تعديل حجم الخط حسب الرغبة */
-}
+<p class="greeting">مرحبًا،</p>
+<p class="introduction">أنا علي، طالب في مجال إدارة الأعمال في جامعة التنمية البشرية في السليمانية</p>
+<p class="purpose">قمت بتصميم هذا الموقع كجزء من مبادرة شخصية تهدف إلى تقديم مورد مجاني ومفيد للطلاب.</p>
+<p class="goal">يهدف الموقع إلى توفير معلومات أكاديمية منوعة لدعم الطلاب في مسيرتهم التعليمية.</p>
 
 
 
-p {
-    color: #dbdbdb;
-    margin-bottom: 20px;
-}
+<a href="https://t.me/your-telegram" class="telegram-button">
+  <i class="fab fa-telegram-plane"></i> صفحتي على تيليكرام
+  
+  
+</a>
 
+<p class="quote">(( خير الناس أنفعهم للناس ))</p>
+<p class="date">اَخر تحديث للموقع : 2024-07-24 ©  جميع الحقوق محفوظة. </p>
+        </div>
+    </div>
 
-.quote {
-    color: #36c28f;
-    font-size: 18px;
-    margin-top: 20px;
-}
+  <!-- زر القائمة -->
+<div id="menu-button" class="menu-button">&#9776;</div>
 
-
- .telegram-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 3px;
-            background-color: rgba(0, 120, 255, 0.1);
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            cursor: pointer;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .telegram-button:hover {
-            background-color: rgba(0, 120, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .telegram-button i {
-            margin-left:  10px; /* مسافة بين الأيقونة والنص */
-        }
-
-/* Animations */
-@keyframes flip {
-    0%, 20%, 50%, 80%, 100% {
-        transform: translateY(0);
-    }
-    40% {
-        transform: translateY(-30px);
-    }
-    60% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
-}
-
-
-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    font-size: 14px;
-
-
-}
-
-#star-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-}
+<!-- القائمة الجانبية -->
+<div id="side-menu" class="side-menu">
+    <button data-url="https://alievo99.github.io/university/">معدلات الجامعات الحكومية -</button>
+<button data-url="https://alievo99.github.io/private/"> الجامعات الاهلية -</button>
+ <button data-url="https://alievo99.github.io/college/">القسم حسب المعدل -</button>
+</div>
 
 
 
-.menu-button {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000;
-    color: white;
-}
-
-.side-menu {
-    position: fixed;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    padding-top: 50px;
-    transition: right 0.3s ease;
-    z-index: 1000;
-}
-
-.side-menu.open {
-    right: 0;
-}
-
-.side-menu button {
-    display: block;
-    width: 100%;
-    padding: 15px 20px;
-    background-color: transparent;
-    color: white;
-    font-size: 16px;
-    text-align: right;
-    border: none;
-    border-bottom: 1px solid #555;
-    transition: background-color 0.3s ease;
-}
-
-.side-menu button:hover {
-    background-color: #ffc400;
-}
+        <div id="star-container"></div>
 
 
 
 
 
-
-
-
+    <script src="script.js"></script>
+</body>
+</html>
