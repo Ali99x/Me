@@ -96,7 +96,7 @@ h1 {
     color: #fff;
     font-weight: normal; /* يمكنك تغيير الوزن حسب الرغبة */
     text-align: center;
-    margin-bottom: 16px;
+    margin-bottom: 14px;
     font-size: 14px; /* يمكنك تعديل حجم الخط حسب الرغبة */
 }
 
@@ -104,14 +104,14 @@ h1 {
 
 p {
     color: #dbdbdb;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 
 .quote {
     color: #36c28f;
     font-size: 18px;
-    margin-top: 20px;
+    margin-top: 18px;
 }
 
 
