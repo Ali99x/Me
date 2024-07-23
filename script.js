@@ -16,15 +16,15 @@ function createStar() {
     const star = document.createElement('div');
     star.classList.add('star');
     star.style.left = `${Math.random() * 100}%`;
-    star.style.animationDuration = `${Math.random() * 3 + 2}s`;
+    star.style.animationDuration = `${Math.random() * 4 + 3}s`;
     starContainer.appendChild(star);
 
     setTimeout(() => {
         star.remove();
-    }, 5000);
+    }, 9000);
 }
 
-setInterval(createStar, 100);
+setInterval(createStar, 200);
 
 const starStyle = document.createElement('style');
 starStyle.innerHTML = `
