@@ -190,14 +190,20 @@ footer {
 }
 
 
+@keyframes colorChange {
+    0% { color: #21fbff; } /* اللون الأزرق */
+    50% { color: #ffffff; } /* اللون الأبيض */
+    100% { color: #21fbff; } /* العودة إلى اللون الأزرق */
+}
+
 .menu-button {
     position: fixed;
     top: 20px;
     right: 20px;
-    font-size: 24px;
+    font-size: 26px;
     cursor: pointer;
     z-index: 1000;
-    color: white;
+    animation: colorChange 1s infinite; /* تطبيق التأثير */
 }
 
 .side-menu {
