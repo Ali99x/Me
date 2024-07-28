@@ -200,11 +200,17 @@ footer {
     position: fixed;
     top: 20px;
     right: 20px;
-    font-size: 26px;
+    font-size: 24px;
     cursor: pointer;
-       z-index: 1009;
-    animation: colorChange 1s infinite; /* تطبيق التأثير */
+    z-index: 1009;
+    color: white;
+    transition: transform 0.3s ease;
 }
+
+.menu-button.clicked {
+    transform: rotate(180deg) scale(1.1);
+}
+       
 
 .side-menu {
     position: fixed;
