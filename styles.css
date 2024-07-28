@@ -202,7 +202,7 @@ footer {
     right: 20px;
     font-size: 26px;
     cursor: pointer;
-    z-index: 1000;
+       z-index: 1009;
     animation: colorChange 1s infinite; /* تطبيق التأثير */
 }
 
