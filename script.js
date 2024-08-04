@@ -89,26 +89,26 @@ function openPage(url) {
 }
 
 
+
+
+
 function handleClick() {
     const image = document.querySelector('.profile-image');
     const greetingText = document.getElementById('greeting-text');
 
-    // Show the greeting text
-    greetingText.style.display = 'inline-block';
+    // Hide the greeting text
+    greetingText.style.opacity = '0';
 
-    // Remove the text after 2 seconds
+    // Start bounce, rotate, and color change animation
+    image.style.animation = 'bounceRotate 2s, colorChange 2s';
+
+    // Show the greeting text again after the animation ends
     setTimeout(() => {
-        greetingText.style.display = 'none';
-
-        // Start bounce and rotate animation after the text is hidden
-        image.style.animation = 'bounceRotate 2s';
-        
-        // Remove bounce and rotate animation after it ends
-        setTimeout(() => {
-            image.style.animation = '';
-        }, 2000);
-
-    }, 1300);
+        image.style.animation = ''; // Clear animation
+        greetingText.style.opacity = '1'; // Show the greeting text again
+    }, 2000); // Duration of the animation in milliseconds
 }
+
+
 
 
