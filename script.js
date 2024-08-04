@@ -89,6 +89,26 @@ function openPage(url) {
 }
 
 
+function handleClick() {
+    const image = document.querySelector('.profile-image');
+    const greetingText = document.getElementById('greeting-text');
 
+    // Show the greeting text
+    greetingText.style.display = 'inline-block';
+
+    // Remove the text after 2 seconds
+    setTimeout(() => {
+        greetingText.style.display = 'none';
+
+        // Start bounce and rotate animation after the text is hidden
+        image.style.animation = 'bounceRotate 2s';
+        
+        // Remove bounce and rotate animation after it ends
+        setTimeout(() => {
+            image.style.animation = '';
+        }, 2000);
+
+    }, 1300);
+}
 
 
