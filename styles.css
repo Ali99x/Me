@@ -73,7 +73,7 @@ body, html {
     overflow: auto;
     margin: 0 auto;
     height: auto;
-    max-height: 73vh;
+    max-height: 70vh;
 }
 
 .profile-container {
@@ -288,9 +288,9 @@ footer {
 
 
 .greeting-text {
-    display: none;
+    display: inline-block; /* Keep it always visible */
     position: absolute;
-    top: -10px; /* Adjust as needed */
+   top: 5px; /* Adjust as needed */
     left: 70px; /* Adjust as needed */
     background: #f9f9f9;
     color: #333;
@@ -299,14 +299,17 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     font-family: 'Comic Sans MS', sans-serif; /* Use a playful font */
     font-size: 14px;
-    transform: translateY(-1%); /* Adjusts the position to center the triangle */
+    transform: translateY(-50%); /* Adjusts the position to center the triangle */
+    z-index: 10; /* Ensure it's above the image */
+    opacity: 1; /* Ensure it's visible initially */
+    transition: opacity 0.3s; /* Smooth transition for opacity */
 }
 
 .greeting-text::before {
     content: '';
     position: absolute;
-    top: 100%;
-    left: 10px; /* Adjust the position of the triangle */
+   top: 100%;
+    left: 7px; /* Adjust the position of the triangle */
     border-width: 10px;
     border-style: solid;
     border-color: #f9f9f9 transparent transparent transparent; /* Triangle color matches background */
@@ -321,14 +324,6 @@ footer {
 }
 
 @keyframes bounceRotate {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    20% { transform: translate(50px, -50px) rotate(45deg); }
-    40% { transform: translate(-50px, 50px) rotate(90deg); }
-    60% { transform: translate(50px, 50px) rotate(135deg); }
-    80% { transform: translate(-50px, -50px) rotate(180deg); }
-    100% { transform: translate(0, 0) rotate(360deg); }
-}
-@-webkit-keyframes bounceRotate {
     0% { transform: translate(0, 0) rotate(0deg); }
     20% { transform: translate(50px, -50px) rotate(45deg); }
     40% { transform: translate(-50px, 50px) rotate(90deg); }
