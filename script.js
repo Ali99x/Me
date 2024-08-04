@@ -196,10 +196,13 @@ function typeEffect(element, text, callback) {
 function displayMessages(index) {
     const greetingText = document.getElementById('greeting-text');
     const messages = [
-        'مرحبا',
+        'مرحبا !',
+        'طاب يومك..',
         'أوه انظر..',
-        'يمكنك تصفح أدوات الموقع',
-        'استمتع بالتصفح!'
+        'هنالك ادوات هنا',
+        'عبر الزر اعلاه',
+        'هيا تفضل بالمتصفح',
+      'شكراً لك ^_^'
     ];
 
     if (index < messages.length) {
@@ -207,7 +210,7 @@ function displayMessages(index) {
             setTimeout(() => {
                 greetingText.textContent = ''; // Clear text for the next message
                 displayMessages(index + 1); // Move to next message
-            }, 1300); // Delay before clearing text
+            }, 1100); // Delay before clearing text
         });
     } else {
         // Keep the last message visible indefinitely
