@@ -193,9 +193,12 @@ function typeEffect(element, text, callback) {
     type();
 }
 
-function displayMessages(index) {
-    const greetingText = document.getElementById('greeting-text');
-    const messages = [
+let messageIndex = 0;
+const messages = [
+
+
+
+
         'مرحبا !',
         'طاب يومك..',
         'أوه انظر..',
@@ -206,19 +209,51 @@ function displayMessages(index) {
         'يمكنك اخباري',
             'اِن احتجت شيئاً.',
            'شكراً لك ^_^'
-    ];
 
-    if (index < messages.length) {
-        typeEffect(greetingText, messages[index], () => {
+];
+let typingInProgress = false; // Flag to check if typing is in progress
+
+function typeEffect(element, text, callback) {
+    let index = 0;
+    element.textContent = ''; // Clear any existing text
+
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+        } else if (callback) {
+            setTimeout(callback, 500); // Pause before calling the callback
+        }
+    }
+
+    typingInProgress = true; // Set flag to indicate typing is in progress
+    type();
+}
+
+function displayMessages() {
+    const greetingText = document.getElementById('greeting-text');
+
+    if (messageIndex < messages.length) {
+        typeEffect(greetingText, messages[messageIndex], () => {
             setTimeout(() => {
                 greetingText.textContent = ''; // Clear text for the next message
-                displayMessages(index + 1); // Move to next message
-            }, 1100); // Delay before clearing text
+                messageIndex++;
+                displayMessages(); // Move to next message
+            }, 1000); // Delay before clearing text
         });
     } else {
         // Keep the last message visible indefinitely
+        typingInProgress = false; // Reset flag when done
         greetingText.textContent = messages[messages.length - 1];
         greetingText.style.opacity = '1'; // Ensure the last message is visible
+    }
+}
+
+function resetMessages() {
+    if (!typingInProgress) { // Only reset if typing is not in progress
+        messageIndex = 0; // Reset the message index
+        displayMessages(); // Start displaying messages again
     }
 }
 
@@ -226,5 +261,34 @@ function displayMessages(index) {
 window.onload = function() {
     const greetingText = document.getElementById('greeting-text');
     greetingText.style.opacity = '1'; // Ensure text is visible
-    displayMessages(0); // Start displaying messages
+    displayMessages(); // Start displaying messages
+
+    // Add click event listener to the image only
+    const profileImage = document.querySelector('.profile-image');
+    profileImage.addEventListener('click', resetMessages);
 };
+
+
+
+// منع النسخ
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+});
+
+// منع استخدام قائمة السياق (النقر بزر الفأرة الأيمن)
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+
+// منع تحديد النصوص
+document.addEventListener('selectstart', function(e) {
+    e.preventDefault();
+});
+
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey && e.key === 'c') || (e.ctrlKey && e.key === 'v')) {
+        e.preventDefault();
+    }
+});
+
+
