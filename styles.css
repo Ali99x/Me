@@ -276,3 +276,55 @@ footer {
 .side-menu button:hover {
     background-color: #ffc400;
 }
+
+
+
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+
+
+
+.greeting-text {
+    display: none;
+    position: absolute;
+    top: -10px; /* Adjust as needed */
+    left: 70px; /* Adjust as needed */
+    background: #f9f9f9;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    font-family: 'Comic Sans MS', sans-serif; /* Use a playful font */
+    font-size: 14px;
+    transform: translateY(-1%); /* Adjusts the position to center the triangle */
+}
+
+.greeting-text::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 10px; /* Adjust the position of the triangle */
+    border-width: 10px;
+    border-style: solid;
+    border-color: #f9f9f9 transparent transparent transparent; /* Triangle color matches background */
+}
+
+
+
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes bounceRotate {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(50px, -50px) rotate(45deg); }
+    40% { transform: translate(-50px, 50px) rotate(90deg); }
+    60% { transform: translate(50px, 50px) rotate(135deg); }
+    80% { transform: translate(-50px, -50px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
