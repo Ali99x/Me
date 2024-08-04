@@ -92,23 +92,133 @@ function openPage(url) {
 
 
 
-function handleClick() {
-    const image = document.querySelector('.profile-image');
-    const greetingText = document.getElementById('greeting-text');
+function typeEffect(element, text, callback) {
+    let index = 0;
+    element.textContent = '';
 
-    // Hide the greeting text
-    greetingText.style.opacity = '0';
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+        } else if (callback) {
+            setTimeout(callback, 500); // Pause before calling the callback
+        }
+    }
 
-    // Start bounce, rotate, and color change animation
-    image.style.animation = 'bounceRotate 2s, colorChange 2s';
-
-    // Show the greeting text again after the animation ends
-    setTimeout(() => {
-        image.style.animation = ''; // Clear animation
-        greetingText.style.opacity = '1'; // Show the greeting text again
-    }, 2000); // Duration of the animation in milliseconds
+    type();
 }
 
+function typeEffect(element, text, callback) {
+    let index = 0;
+    element.textContent = '';
 
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+        } else if (callback) {
+            setTimeout(callback, 500); // Pause before calling the callback
+        }
+    }
 
+    type();
+}
+function typeEffect(element, text, callback) {
+    let index = 0;
+    element.textContent = '';
 
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+        } else if (callback) {
+            setTimeout(callback, 500); // Pause before calling the callback
+        }
+    }
+
+    type();
+}
+
+function typeEffect(element, text, callback) {
+    let index = 0;
+    element.textContent = '';
+
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+        } else if (callback) {
+            setTimeout(callback, 500); // Pause before calling the callback
+        }
+    }
+
+    type();
+}
+
+function typeEffect(element, text, callback) {
+    let index = 0;
+    element.textContent = ''; // Clear any existing text
+
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+        } else if (callback) {
+            setTimeout(callback, 500); // Pause before calling the callback
+        }
+    }
+
+    type();
+}
+
+function typeEffect(element, text, callback) {
+    let index = 0;
+    element.textContent = ''; // Clear any existing text
+
+    function type() {
+        if (index < text.length) {
+            element.textContent += text.charAt(index);
+            index++;
+            setTimeout(type, 50); // Adjust typing speed here
+        } else if (callback) {
+            setTimeout(callback, 500); // Pause before calling the callback
+        }
+    }
+
+    type();
+}
+
+function displayMessages(index) {
+    const greetingText = document.getElementById('greeting-text');
+    const messages = [
+        'مرحبا',
+        'أوه انظر..',
+        'يمكنك تصفح أدوات الموقع',
+        'استمتع بالتصفح!'
+    ];
+
+    if (index < messages.length) {
+        typeEffect(greetingText, messages[index], () => {
+            setTimeout(() => {
+                greetingText.textContent = ''; // Clear text for the next message
+                displayMessages(index + 1); // Move to next message
+            }, 1300); // Delay before clearing text
+        });
+    } else {
+        // Keep the last message visible indefinitely
+        greetingText.textContent = messages[messages.length - 1];
+        greetingText.style.opacity = '1'; // Ensure the last message is visible
+    }
+}
+
+// Start displaying messages when the page loads
+window.onload = function() {
+    const greetingText = document.getElementById('greeting-text');
+    greetingText.style.opacity = '1'; // Ensure text is visible
+    displayMessages(0); // Start displaying messages
+};
