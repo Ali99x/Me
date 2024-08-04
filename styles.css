@@ -287,22 +287,41 @@ footer {
 
 
 
+.profile-container {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-image {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    margin-bottom: 3px;
+    cursor: pointer;
+    position: relative;
+}
+
 .greeting-text {
-    display: inline-block; /* Keep it always visible */
+    display: inline-block;
     position: absolute;
-   top: 10px; /* Adjust as needed */
-    left: 70px; /* Adjust as needed */
+    top: 5%; /* Adjust this to move the text box down */
+    left: 70px; /* Adjust this to move the text box horizontally */
     background: #f9f9f9;
     color: #333;
-    padding: 10px 15px;
+    padding: 6px 15px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    font-family: 'Comic Sans MS', sans-serif; /* Use a playful font */
-    font-size: 14px;
-    transform: translateY(-50%); /* Adjusts the position to center the triangle */
-    z-index: 10; /* Ensure it's above the image */
-    opacity: 1; /* Ensure it's visible initially */
-    transition: opacity 0.3s; /* Smooth transition for opacity */
+    font-family: 'Comic Sans MS', sans-serif;
+    font-size: 12px;
+        transform: translateY(-50%); /* Adjusts the position to center the triangle */
+
+    z-index: 10;
+    
+    opacity: 1;
+     
+    white-space: nowrap;
+
 }
 
 .greeting-text::before {
@@ -310,24 +329,7 @@ footer {
     position: absolute;
    top: 100%;
     left: 7px; /* Adjust the position of the triangle */
-    border-width: 10px;
+    border-width: 8px;
     border-style: solid;
     border-color: #f9f9f9 transparent transparent transparent; /* Triangle color matches background */
-}
-
-
-
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
-}
-
-@keyframes bounceRotate {
-    0% { transform: translate(0, 0) rotate(0deg); }
-    20% { transform: translate(50px, -50px) rotate(45deg); }
-    40% { transform: translate(-50px, 50px) rotate(90deg); }
-    60% { transform: translate(50px, 50px) rotate(135deg); }
-    80% { transform: translate(-50px, -50px) rotate(180deg); }
-    100% { transform: translate(0, 0) rotate(360deg); }
 }
