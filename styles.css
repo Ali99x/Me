@@ -328,3 +328,11 @@ footer {
     80% { transform: translate(-50px, -50px) rotate(180deg); }
     100% { transform: translate(0, 0) rotate(360deg); }
 }
+@-webkit-keyframes bounceRotate {
+    0% { transform: translate(0, 0) rotate(0deg); }
+    20% { transform: translate(50px, -50px) rotate(45deg); }
+    40% { transform: translate(-50px, 50px) rotate(90deg); }
+    60% { transform: translate(50px, 50px) rotate(135deg); }
+    80% { transform: translate(-50px, -50px) rotate(180deg); }
+    100% { transform: translate(0, 0) rotate(360deg); }
+}
