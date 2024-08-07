@@ -1,14 +1,18 @@
 
-window.addEventListener('resize', () => {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    initStars(); // إعادة تهيئة النجوم عند تغيير حجم النافذة
+document.addEventListener("DOMContentLoaded", function() {
+    const glassContainer = document.getElementById("glass-container");
+    setTimeout(() => {
+        glassContainer.classList.add("show");
+    }, 100); // Delay to show the animation effect
 });
 
 
-
-
-
+document.addEventListener("DOMContentLoaded", function() {
+    const glassContainer = document.querySelector(".glass-container");
+    setTimeout(() => {
+        glassContainer.classList.add("show");
+    }, 500); // Delay to show the animation effect
+});
 
 const starContainer = document.getElementById('star-container');
 
@@ -290,5 +294,3 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
-
-
