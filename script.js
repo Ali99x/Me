@@ -20,7 +20,7 @@ function createStar() {
     const star = document.createElement('div');
     star.classList.add('star');
     star.style.left = `${Math.random() * 100}%`;
-    star.style.animationDuration = `${Math.random() * 4 + 3}s`;
+    star.style.animationDuration = `${Math.random() * 5 + 4}s`;
     starContainer.appendChild(star);
 
     setTimeout(() => {
@@ -28,7 +28,7 @@ function createStar() {
     }, 9000);
 }
 
-setInterval(createStar, 200);
+setInterval(createStar, 333);
 
 const starStyle = document.createElement('style');
 starStyle.innerHTML = `
@@ -203,17 +203,15 @@ const messages = [
 
 
 
-        'مرحبا !',
-        'طاب يومك..',
-        'أوه انظر..',
-        'هنالك ادوات هنا',
-      'عبر الزر اعلاه ↗',
+        'أوه.. مرحبا !',
+       ' ؟هل تريد مساعدتي',
+        'ان كانت لديك افكار',
+      'لتطوير الموقع !',
         
-'هيا تفضل بالتصفح.',
-        'و يمكنك اخباري',
-            'اِن احتجت شيئاً.',
-           'شكراً لك ^_^'
-
+'أو اي ملاحظات',
+       'يمكنك اخباري',
+            'تواصل معي.',
+           'وشكراً لك..',
 ];
 let typingInProgress = false; // Flag to check if typing is in progress
 
